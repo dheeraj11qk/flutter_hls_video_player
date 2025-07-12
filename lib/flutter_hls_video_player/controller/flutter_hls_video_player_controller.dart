@@ -115,7 +115,8 @@ class FlutterHLSVideoPlayerController {
 
   Future<void> loadHlsVideo(String m3u8Url) async {
     try {
-      if (m3u8Url == 'null' || m3u8Url.split(".").last != "m3u8") {
+
+      if (m3u8Url == 'null' || !m3u8Url.contains('.m3u8')) {
         onError(message: "Failed to load video");
         return;
       }
